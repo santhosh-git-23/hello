@@ -12,12 +12,12 @@ pipeline {
         sh 'mvn clean package'
       }
     }
-//     stage ('Deploy') {
-//       steps {
-//         script {
-//           deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://13.51.146.212:8080/')], contextPath: '/', onFailure: false, war: '**/*.war' 
-//         }
-//       }
-//     }
+    stage ('Deploy') {
+      steps {
+        script {
+          deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://13.51.146.212:8080/')], contextPath: '/', onFailure: false, war: '**/*.war' 
+        }
+      }
+    }
   }
 }
