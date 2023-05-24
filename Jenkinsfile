@@ -10,6 +10,7 @@ pipeline {
     stage ('Build') {
       steps {
         sh 'mvn clean package'
+        sh 'mvn install -Dmaven.plugin.validation=VERBOSE'
       }
     }
     stage ('Deploy') {
